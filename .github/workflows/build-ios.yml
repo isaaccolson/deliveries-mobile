@@ -8,21 +8,21 @@ on:
       - ".github/workflows/build-ios.yml"
       - "package/ios/**"
       - "package/*.podspec"
-      - "example/ios/**"
+      - "deliveries-mobile/ios/**"
   pull_request:
     paths:
       - ".github/workflows/build-ios.yml"
       - "package/ios/**"
       - "package/*.podspec"
-      - "example/ios/**"
+      - "deliveries-mobile/ios/**"
 
 jobs:
   build:
-    name: Build iOS Example App
+    name: Build iOS deliveries-mobile App
     runs-on: macOS-latest
     defaults:
       run:
-        working-directory: example/ios
+        working-directory: deliveries-mobile/ios
     steps:
       - uses: actions/checkout@v4
 
@@ -40,12 +40,12 @@ jobs:
         with:
           ruby-version: 2.7.2
           bundler-cache: true
-          working-directory: example/ios
+          working-directory: deliveries-mobile/ios
 
       - name: Restore Pods cache
         uses: actions/cache@v4
         with:
-          path: example/ios/Pods
+          path: deliveries-mobile/ios/Pods
           key: ${{ runner.os }}-with-fps-pods-${{ hashFiles('**/Podfile.lock', '**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-with-fps-pods-
@@ -66,11 +66,11 @@ jobs:
           CODE_SIGNING_ALLOWED=NO | xcpretty"
 
   build-no-frame-processors:
-    name: Build iOS Example App without Frame Processors
+    name: Build iOS deliveries-mobile App without Frame Processors
     runs-on: macOS-latest
     defaults:
       run:
-        working-directory: example/ios
+        working-directory: deliveries-mobile/ios
     steps:
       - uses: actions/checkout@v4
 
@@ -92,12 +92,12 @@ jobs:
         with:
           ruby-version: 2.7.2
           bundler-cache: true
-          working-directory: example/ios
+          working-directory: deliveries-mobile/ios
 
       - name: Restore Pods cache
         uses: actions/cache@v4
         with:
-          path: example/ios/Pods
+          path: deliveries-mobile/ios/Pods
           key: ${{ runner.os }}-without-fps-pods-${{ hashFiles('**/Podfile.lock', '**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-without-fps-pods-

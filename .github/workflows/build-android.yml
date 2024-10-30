@@ -7,16 +7,16 @@ on:
     paths:
       - ".github/workflows/build-android.yml"
       - "package/android/**"
-      - "example/android/**"
+      - "deliveries-mobile/android/**"
       - "package/bun.lockb"
-      - "example/bun.lockb"
+      - "deliveries-mobile/bun.lockb"
   pull_request:
     paths:
       - ".github/workflows/build-android.yml"
       - "package/android/**"
-      - "example/android/**"
+      - "deliveries-mobile/android/**"
       - "package/bun.lockb"
-      - "example/bun.lockb"
+      - "deliveries-mobile/bun.lockb"
 
 jobs:
   build:
@@ -45,15 +45,15 @@ jobs:
           key: ${{ runner.os }}-with-fps-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-with-fps-gradle-
-      - name: Run Gradle Build for example/android/
-        run: cd example/android && ./gradlew assembleDebug --no-daemon --build-cache
+      - name: Run Gradle Build for deliveries-mobile/android/
+        run: cd deliveries-mobile/android && ./gradlew assembleDebug --no-daemon --build-cache
 
       # Gradle cache doesn't like daemons
       - name: Stop Gradle Daemon
-        run: cd example/android && ./gradlew --stop
+        run: cd deliveries-mobile/android && ./gradlew --stop
 
   build-no-frame-processors:
-    name: Build Android Example App (without Frame Processors)
+    name: Build Android deliveries-mobile App (without Frame Processors)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -71,7 +71,7 @@ jobs:
         run: bun install
       - name: Remove worklets, skia and reanimated
         run: |
-          bun remove react-native-worklets-core @shopify/react-native-skia react-native-reanimated --cwd example
+          bun remove react-native-worklets-core @shopify/react-native-skia react-native-reanimated --cwd deliveries-mobile
           bun remove react-native-worklets-core @shopify/react-native-skia react-native-reanimated
 
       - name: Restore Gradle cache
@@ -82,9 +82,9 @@ jobs:
           key: ${{ runner.os }}-without-fps-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-without-fps-gradle-
-      - name: Run Gradle Build for example/android/
-        run: cd example/android && ./gradlew assembleDebug --no-daemon --build-cache && cd ../..
+      - name: Run Gradle Build for deliveries-mobile/android/
+        run: cd deliveries-mobile/android && ./gradlew assembleDebug --no-daemon --build-cache && cd ../..
 
       # Gradle cache doesn't like daemons
       - name: Stop Gradle Daemon
-        run: cd example/android && ./gradlew --stop
+        run: cd deliveries-mobile/android && ./gradlew --stop

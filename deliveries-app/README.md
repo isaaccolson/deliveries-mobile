@@ -37,13 +37,13 @@ bun bootstrap
 
 ### iOS
 
-1. Open the `example/ios/VisionCameraExample.xcworkspace` file with Xcode
+1. Open the `deliveries-mobile/ios/VisionCameraExample.xcworkspace` file with Xcode
 2. Change signing configuration to your developer account
 3. Select your device in the devices drop-down
 4. Hit run
 
 ### Android
 
-1. Open the `example/android/` folder with Android Studio
+1. Open the `deliveries-mobile/android/` folder with Android Studio
 2. Select your device in the devices drop-down
 3. Hit run
