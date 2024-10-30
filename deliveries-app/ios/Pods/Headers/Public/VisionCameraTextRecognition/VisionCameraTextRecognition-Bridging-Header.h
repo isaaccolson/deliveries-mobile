@@ -1,1 +1,0 @@
-../../../../../node_modules/react-native-vision-camera-text-recognition/ios/VisionCameraTextRecognition-Bridging-Header.h
