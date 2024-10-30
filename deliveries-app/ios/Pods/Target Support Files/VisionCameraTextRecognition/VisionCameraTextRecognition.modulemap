@@ -1,0 +1,6 @@
+module VisionCameraTextRecognition {
+  umbrella header "VisionCameraTextRecognition-umbrella.h"
+
+  export *
+  module * { export * }
+}

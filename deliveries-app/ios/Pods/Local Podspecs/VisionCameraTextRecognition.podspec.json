@@ -1,0 +1,42 @@
+{
+  "name": "VisionCameraTextRecognition",
+  "version": "3.1.1",
+  "summary": "A plugin to Scanning Text,Translate using ML Kit Text Recognition and ML Kit Translation. With High Performance and many features.",
+  "homepage": "https://github.com/gev2002/react-native-vision-camera-text-recognition#readme",
+  "license": "MIT",
+  "authors": "gev2002 <gevorg2002@inbox.ru> (https://github.com/gev2002)",
+  "platforms": {
+    "ios": "13.4"
+  },
+  "source": {
+    "git": "https://github.com/gev2002/react-native-vision-camera-text-recognition.git",
+    "tag": "3.1.1"
+  },
+  "source_files": "ios/**/*.{h,m,mm,swift}",
+  "dependencies": {
+    "React-Core": [
+
+    ],
+    "VisionCamera": [
+
+    ],
+    "GoogleMLKit/TextRecognition": [
+
+    ],
+    "GoogleMLKit/TextRecognitionChinese": [
+
+    ],
+    "GoogleMLKit/TextRecognitionDevanagari": [
+
+    ],
+    "GoogleMLKit/TextRecognitionJapanese": [
+
+    ],
+    "GoogleMLKit/TextRecognitionKorean": [
+
+    ],
+    "GoogleMLKit/Translate": [
+
+    ]
+  }
+}
