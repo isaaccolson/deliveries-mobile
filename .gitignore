@@ -44,10 +44,10 @@ android.iml
 
 # Cocoapods
 #
-example/ios/Pods
+deliveries-app/ios/Pods
 
 # Ruby
-example/vendor/
+deliveries-app/vendor/
 
 # node.js
 #
