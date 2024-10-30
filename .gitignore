@@ -44,7 +44,7 @@ android.iml
 
 # Cocoapods
 #
-deliveries-app/ios/Pods
+deliveries-app/ios/Pods/
 
 # Ruby
 deliveries-app/vendor/
